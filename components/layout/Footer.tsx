@@ -10,7 +10,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
-            <h3 className="text-2xl font-bold mb-4">AcadConnect</h3>
+            <h3 className="text-2xl font-bold mb-4">Shamademics</h3>
             <p className="text-gray-400">
               Connecting students with expert professors worldwide for academic success.
             </p>
@@ -60,7 +60,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-          <p>© {new Date().getFullYear()} AcadConnect. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Shamademics. All rights reserved.</p>
         </div>
       </div>
     </footer>
