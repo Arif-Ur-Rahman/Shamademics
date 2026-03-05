@@ -1,8 +1,10 @@
-// components/ConsultantCardGrid.tsx (with loading state)
+// components/ConsultantCardGrid.tsx
 import React from 'react';
 import ConsultantCard from './ConsultantCard';
 import ConsultantCardSkeleton from './ConsultantCardSkeleton';
 import { Consultant } from '@/lib/types/consultant';
+import { Button } from '@/components/ui/Button';
+import { Search } from 'lucide-react';
 
 interface ConsultantCardGridProps {
   consultants: Consultant[];
@@ -10,10 +12,10 @@ interface ConsultantCardGridProps {
   skeletonCount?: number;
 }
 
-const ConsultantCardGrid: React.FC<ConsultantCardGridProps> = ({ 
-  consultants, 
+const ConsultantCardGrid: React.FC<ConsultantCardGridProps> = ({
+  consultants,
   isLoading = false,
-  skeletonCount = 6 
+  skeletonCount = 6,
 }) => {
   if (isLoading) {
     return (
@@ -27,17 +29,17 @@ const ConsultantCardGrid: React.FC<ConsultantCardGridProps> = ({
 
   if (consultants.length === 0) {
     return (
-      <div className="text-center py-12">
-        <div className="mx-auto w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center mb-4">
-          <span className="text-4xl">🔍</span>
+      <div className="text-center py-16">
+        <div className="mx-auto w-16 h-16 bg-muted rounded-xl flex items-center justify-center mb-4">
+          <Search className="w-8 h-8 text-muted-foreground" />
         </div>
-        <h3 className="text-xl font-semibold text-gray-900 mb-2">No consultants found</h3>
-        <p className="text-gray-500 max-w-md mx-auto">
+        <h3 className="text-lg font-semibold text-foreground mb-2">No consultants found</h3>
+        <p className="text-muted-foreground max-w-sm mx-auto text-sm">
           Try adjusting your search filters or browse all available consultants.
         </p>
-        <button className="mt-4 px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+        <Button className="mt-6" variant="outline">
           View All Consultants
-        </button>
+        </Button>
       </div>
     );
   }
